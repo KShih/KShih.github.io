@@ -1,4 +1,6 @@
-##Perfect Pitch & A Cappella
+
+##Pitch Perfect & A Cappella
+![](https://upload.wikimedia.org/wikipedia/zh/4/4f/Promotional_poster_for_film_Pitch_Perfect.jpg.jpg)<!-- .element: class="fragment" width="30%" style="float:left; margin-right: 10pt" -->
 
 <br>
 
@@ -12,7 +14,7 @@
 #Overview
 
 1. A Cappella
-1. Perfect Pitch
+1. Pitch Perfect
 
 ---
 
