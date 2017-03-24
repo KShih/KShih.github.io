@@ -1,16 +1,13 @@
-#Home Page
-1. [Category1](./#/0/1)
-1. [Category2](./#/0/2)
-1. [Category3](./#/0/3)
-
---
-
-#Category1
-
-1. [Link1](./2016/gdb)
-1. [Link2](./2016/pwn)
-1. [Link3](./2016/bof)
+#Hello, my Beautiful Stranger
 
 ---
 
-#END
+#About my product
+
+1. [Docker](./2017/Docker/index.html)
+1. [數位廣告詐欺](./2017/Digital_fraud/index.html)
+1. [歌喉讚](./2017/Pitch_Perfect/index.html)
+1. [Blog](http://kshih.logdown.com)
+
+---
+
