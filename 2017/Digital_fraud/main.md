@@ -7,11 +7,10 @@
 ---
 
 ##About me
-![](./head.JPG) <!-- .element: width="50%" style="float:left;margin-left:150pt;" -->
 
 - 施奕帆
 - 資工三甲
-- [github](https://github.com/KShih/)
+- https://github.com/KShih/
 
 
 ---
