@@ -1,71 +1,66 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
   <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta charset='utf-8'>
-    <title>KShih's Slides</title>
-    <meta content='yes' name='apple-mobile-web-app-capable'>
-    <meta content='black-translucent' name='apple-mobile-web-app-status-bar-style'>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' name='viewport'>
-    <link href='css/reveal.css' rel='stylesheet'>
-    <link href='css/theme/white.css' id='theme' rel='stylesheet'>
-    <!-- Code syntax highlighting -->
-    <link href='lib/css/zenburn.css' rel='stylesheet'>
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Single Page Apps for GitHub Pages</title>
+    <meta name="description" content="Lightweight solution for deploying single page apps with GitHub Pages.">
+
+    <style>
+      html, body, div, span, a, p, ul, li, h1, code, nav, input, label {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        box-sizing: inherit;
+        font: inherit;
+        text-decoration: inherit;
+        text-align: inherit;
+        color: inherit;
+        background: transparent;
+      }
+      /*pass window height (w/o scroll bars) down to react app, note can't use vh because that
+      includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
+      html, body { height: 100%; }
+      html { background-color: rgb(0, 120, 0); }
+      #root { background-color: #F0F0F0; min-height: 100%; }
+    </style>
+
+    <!-- favicon -->
+    <link rel="icon" type=”image/svg+xml” href="/favicon/green-grid-144-168-192.svg">
+    <link rel="alternate icon" type="image/png" href="/favicon/green-grid-144-168-192-512x512.png">
+    <link rel="apple-touch-icon" href="/favicon/green-grid-144-168-192-180x180.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
     </script>
-    <!--[if lt IE 9]>
-      <script src="lib/js/html5shiv.js"></script>
-    <![endif]-->
+    <!-- End Single Page Apps for GitHub Pages -->
+
   </head>
   <body>
-    <div class='reveal'>
-      <!-- Any section element inside of this container is displayed as a slide -->
-      <div class='slides'>
-        <section data-markdown="./main.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-        </section>
-      </div>
-    </div>
-    <script src='lib/js/head.min.js'></script>
-    <script src='js/reveal.js'></script>
-    <script>
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-      	controls: true,
-        progress: true,
-        history: true,
-        slideNumber: true,
-        center: true,
-        keyboard: true,
-        overview: true,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1024,
-        height: 768,
-        // Bounds for smallest/largest possible scale to apply to content
-        minScale: 0.1,
-        maxScale: 1.0,
-      
-      	transition: 'convex', // none/fade/slide/convex/concave/zoom
-      
-      	// Optional reveal.js plugins
-      	dependencies: [
-      		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-      		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-      		{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-      		{ src: 'plugin/zoom-js/zoom.js', async: true },
-      		{ src: 'plugin/notes/notes.js', async: true }
-      	]
-      });
-    </script>
+    <div id="root"></div>
+    <!-- single page app in bundle.js -->
+    <script src="/build/bundle.js"></script>
   </body>
 </html>
