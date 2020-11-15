@@ -18,11 +18,17 @@
         color: inherit;
         background: transparent;
       }
-      /*pass window height (w/o scroll bars) down to react app, note can't use vh because that
+      /*pass window height (w/o scroll bars) down to react app, note can't use vh becasue that
       includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
       html, body { height: 100%; }
       html { background-color: rgb(0, 120, 0); }
       #root { background-color: #F0F0F0; min-height: 100%; }
+
+      /*required for IE/Edge to be compatible with left:50vw & transform:translate(-50%, 0),
+      otherwise there is a phantom div on the right side of the screen (from the left:50vw),
+      that the window will scroll to. Note the left:50vw and transform is used to center content
+      horizaontally based on vw to prevent content jump when vertical scroll bar show/hide.*/
+      body { overflow-x: hidden; }
     </style>
 
     <!-- favicon -->
@@ -30,6 +36,18 @@
     <link rel="alternate icon" type="image/png" href="/favicon/green-grid-144-168-192-512x512.png">
     <link rel="apple-touch-icon" href="/favicon/green-grid-144-168-192-180x180.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="./public/manifest.json">
+    <link rel="shortcut icon" href="./public/favicon.ico">
+    <link rel="stylesheet" href="./public/css/default.css">
+    <link rel="stylesheet" href="./public/css/layout.css">
+    <link rel="stylesheet" href="./public/css/media-queries.css">
+    <link rel="stylesheet" href="./public/css/magnific-popup.css">
+
+
+    <title>Tim Baker Development</title>
     <meta name="theme-color" content="#000000">
 
     <!-- Start Single Page Apps for GitHub Pages -->
@@ -59,8 +77,20 @@
 
   </head>
   <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
     <div id="root"></div>
     <!-- single page app in bundle.js -->
     <script src="/build/bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./public/js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="./public/js/jquery-migrate-1.2.1.min.js"></script>
+ 
+    <script src="./public/js/jquery.flexslider.js"></script>
+    <script src="./public/js/waypoints.js"></script>
+    <script src="./public/js/jquery.fittext.js"></script>
+    <script src="./public/js/magnific-popup.js"></script>
+    <script src="./public/js/init.js"></script>
   </body>
 </html>
