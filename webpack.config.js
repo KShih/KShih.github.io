@@ -3,18 +3,24 @@ module.exports = {
   output: {
     path: `${__dirname}/build`,
     publicPath: '/build/',
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
 
   module: {
-    rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }],
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+      {
+        test: /react-vertical-timeline-component\/style\.min\.css$/i,
+        use: ['css-loader']
+      }
+    ]
   },
 
   // to mimic GitHub Pages serving 404.html for all paths
   // and test spa-github-pages redirect in dev
   devServer: {
     historyApiFallback: {
-      rewrites: [{ from: /\//, to: '/404.html' }],
-    },
-  },
+      rewrites: [{ from: /\//, to: '/404.html' }]
+    }
+  }
 };
